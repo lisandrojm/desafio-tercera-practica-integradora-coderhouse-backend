@@ -27,7 +27,7 @@ class Carts extends CustomRouter {
     /* ************************************************************************************ */
     /* Public */
     /* ************************************************************************************ */
-    this.get(`${basePath}/`, ['ADMIN'], cartsController.getCarts);
+    this.get(`${basePath}/`, ['ADMIN', 'PREMIUM'], cartsController.getCarts);
     this.post(`${basePath}/`, ['ADMIN'], cartsController.addCart);
     this.get(`${basePath}/:cid`, ['ADMIN'], cartsController.getCartProductById);
 

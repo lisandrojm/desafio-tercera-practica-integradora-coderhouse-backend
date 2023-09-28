@@ -84,15 +84,13 @@ class CartsServices {
     }
   };
 
-  addProductToCart = async (cid, pid, quantity, res) => {
+  /*   addProductToCart = async (cid, pid, quantity, res) => {
     try {
-      /* Repository */
       const cart = await cartsServices.findById(cid);
       if (!cart) {
         return res.sendNotFound('Carrito no encontrado');
       }
 
-      /* Repository */
       const product = await productsServices.findById(pid);
       if (!product) {
         return res.sendNotFound('ID de Producto no encontrado');
@@ -108,8 +106,45 @@ class CartsServices {
       } else {
         cart.products[productIndex].quantity += quantity || 1;
       }
+      await cartsServices.save(cart);
+      const data = cart;
+      return res.sendSuccess({
+        message: 'Producto agregado al carrito correctamente',
+        payload: data,
+      });
+    } catch (error) {
+      return res.sendServerError('Error al agregar el producto al carrito');
+    }
+  }; */
 
-      /* Repository */
+  addProductToCart = async (cid, pid, quantity, res, req) => {
+    try {
+      const cart = await cartsServices.findById(cid);
+      if (!cart) {
+        return res.sendNotFound('Carrito no encontrado');
+      }
+
+      const product = await productsServices.findById(pid);
+      if (!product) {
+        return res.sendNotFound('ID de Producto no encontrado');
+      }
+      const userData = req.session.user || req.user;
+
+      if (userData && userData.role === 'premium' && product.owner === userData._id) {
+        return res.sendServerError('No puedes agregar tu propio producto creado como owner premium al carrito creado ');
+      }
+
+      const productIndex = cart.products.findIndex((p) => p.productId.toString() === pid);
+      if (productIndex === -1) {
+        const newProduct = {
+          productId: pid,
+          quantity: quantity || 1,
+        };
+        cart.products.push(newProduct);
+      } else {
+        cart.products[productIndex].quantity += quantity || 1;
+      }
+
       await cartsServices.save(cart);
       const data = cart;
       return res.sendSuccess({
@@ -120,7 +155,6 @@ class CartsServices {
       return res.sendServerError('Error al agregar el producto al carrito');
     }
   };
-
   deleteCart = async (cid, res) => {
     try {
       /* Repository */

@@ -20,7 +20,7 @@ class CartsController {
   addProductToCart = async (req, res) => {
     const { cid, pid } = req.params;
     const { quantity } = req.body;
-    return await cartsServices.addProductToCart(cid, pid, quantity, res);
+    return await cartsServices.addProductToCart(cid, pid, quantity, res, req);
   };
 
   deleteCart = async (req, res) => {
