@@ -18,6 +18,7 @@ class UsersRoutes extends CustomRouter {
     this.router.param('uid', validateUserId);
 
     const basePath = '/api/session/useradmin'; // Almacena el prefijo de la ruta
+    const basePathUsersPremium = '/api/users/premium'; // Almacena el prefijo de la ruta
 
     /* ************************************************************************************ */
     /* Sistema de autorización para delimitar el acceso a endpoints:*/
@@ -37,6 +38,10 @@ class UsersRoutes extends CustomRouter {
     this.get(`${basePath}/:uid`, ['ADMIN'], usersController.getUserById);
     this.put(`${basePath}/:uid`, ['ADMIN'], usersController.updateUser);
     this.delete(`${basePath}/:uid`, ['ADMIN'], usersController.deleteUser);
+    /* ************************************************************************************ */
+    /* Premium */
+    /* ************************************************************************************ */
+    this.put(`${basePathUsersPremium}/:uid`, ['PREMIUM'], usersController.updateUser);
   }
 }
 

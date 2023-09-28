@@ -272,6 +272,32 @@ class UsersServices {
       return res.sendServerError('Error al reestablecer la contraseña y enviar el correo electrónico');
     }
   };
+  updateUserPremium = async (uid, updateFields, res, req) => {
+    try {
+      const allowedFields = ['first_name', 'last_name', 'email', 'age', 'password', 'role'];
+
+      const invalidFields = Object.keys(updateFields).filter((field) => !allowedFields.includes(field));
+
+      if (invalidFields.length > 0) {
+        return res.sendUserError(`Los siguientes campos no se pueden modificar: ${invalidFields.join(', ')}`);
+      }
+
+      /* Repository */
+      const updatedUser = await usersServices.findByIdAndUpdate(uid, updateFields, { new: true });
+
+      if (!updatedUser) {
+        return res.sendNotFound('Usuario no encontrado');
+      }
+
+      req.app.io.emit('updateUser', updatedUser);
+
+      const data = updatedUser;
+
+      return res.sendSuccess({ message: 'Usuario actualizado correctamente', payload: data });
+    } catch (error) {
+      return res.sendServerError('Error al actualizar el usuario');
+    }
+  };
 }
 
 module.exports = new UsersServices();

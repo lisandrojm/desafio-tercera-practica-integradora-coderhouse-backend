@@ -44,6 +44,12 @@ class UsersController {
     const { email } = req.query;
     await UsersServices.resetPassByEmail(email, res, req);
   };
+
+  updateUserPremium = async (req, res) => {
+    const { uid } = req.params;
+    const updateFields = req.body;
+    return await UsersServices.updateUserPremium(uid, updateFields, res, req);
+  };
 }
 
 module.exports = new UsersController();
