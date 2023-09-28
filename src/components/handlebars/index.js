@@ -66,7 +66,7 @@ class HandlebarsRoutes extends CustomRouter {
     /* ************************************************************************************ */
     /* USER/ADMIN */
     /* ************************************************************************************ */
-    this.get('/current', ['USER', 'ADMIN'], handlebarsController.getCurrent);
+    this.get('/current', ['USER', 'ADMIN', 'PREMIUM'], handlebarsController.getCurrent);
   }
 }
 

@@ -224,6 +224,7 @@ class ProductsServices {
           price: product.price,
           stock: product.stock,
           category: product.category,
+          owner: product.owner,
         };
       });
 

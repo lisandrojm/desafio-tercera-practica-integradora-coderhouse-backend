@@ -200,7 +200,6 @@ class HandlebarsServices {
   getCartProductById = async (cid, res, userData) => {
     try {
       /* Repository */
-      const user = await usersServices.findUserById(userData._id, { path: 'cart' });
       const cart = await cartsServices.findCartById(cid, { path: 'products.productId', select: '-__v' });
       /*       console.log('~~~getCartProductById Populate findById ~~~', cart); */
       const formattedCart = {

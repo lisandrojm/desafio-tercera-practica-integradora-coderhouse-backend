@@ -19,18 +19,20 @@
             <h2 class='fw-bold text-center d-md-none'><span class='text-uppercase'>{{user.role}}</span></h2>
             <h5 class='text-center m-0 ms-2 d-flex'><span class='d-none d-md-block me-2'>Total:</span><span class='text-primary' id='totalProductsValue'> {{totalProducts}} </span></h5>
           </div>
-          <div class='d-flex flex-column justify-content-center align-items-start'>
-            <div class='text-secondary d-none d-md-block'>
-              <div class='text-secondary d-none d-md-block'>
-                <p class='font_id mb-2'><span class='fw-bold text-danger text-uppercase'>{{user.role}}: </span> <span id='userEmail'>{{user.email}}</span></p>
-              </div>
-            </div>
-            <div class='d-flex align-items-center mb-2'>
+          <div class='d-flex justify-content-center align-items-center'>
+            <div class='d-flex align-items-center mb-2 me-3'>
               <div>
                 <a class='btn btn-warning' href='/admin' role='button'>Dashboard</a>
               </div>
               <div class='ps-2'>
                 <a class='btn btn-outline-danger' href='/api/session/auth/logout'>Logout</a>
+              </div>
+            </div>
+            <div class='text-secondary d-none d-md-block'>
+              <div class='text-secondary d-none d-md-block'>
+                <p class='font_id mb-0'><span class='fw-bold'>Role: </span> <span class='fw-bold text-danger text-uppercase'>{{user.role}} </span> </p>
+                <p class='font_id mb-0'><span class='fw-bold'>Email: </span> <span id='userEmail'>{{user.email}}</span></p>
+                <p class='font_id mb-2'><span class='fw-bold'>User ID: </span> <span id='cartId'>{{user._id}}</span></p>
               </div>
             </div>
           </div>

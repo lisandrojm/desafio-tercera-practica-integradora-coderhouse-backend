@@ -83,11 +83,8 @@ class HandlebarsController {
     const userData = req.session.user || req.user;
 
     // Filtra y estructura los datos del usuario utilizando getUserWithCurrentDTO
-    const userWithCurrentDTO = await usersServices.getUserWithCurrentDTO(userData);
     /*     console.log('userWithCurrentDTO getCartProductById running', userWithCurrentDTO); */
-
-    // Utiliza userWithCurrentDTO en la función HandlebarsServices.getCartProductById
-    const data = await HandlebarsServices.getCartProductById(cartId, res, userWithCurrentDTO);
+    const data = await HandlebarsServices.getCartProductById(cartId, res, userData);
 
     return res.render('carts', data);
   };
