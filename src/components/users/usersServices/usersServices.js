@@ -274,7 +274,7 @@ class UsersServices {
   };
   updateUserPremium = async (uid, updateFields, res, req) => {
     try {
-      const allowedFields = ['first_name', 'last_name', 'email', 'age', 'password', 'role'];
+      const allowedFields = ['role'];
 
       const invalidFields = Object.keys(updateFields).filter((field) => !allowedFields.includes(field));
 

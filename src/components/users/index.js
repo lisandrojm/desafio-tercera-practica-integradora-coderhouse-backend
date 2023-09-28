@@ -41,7 +41,7 @@ class UsersRoutes extends CustomRouter {
     /* ************************************************************************************ */
     /* Premium */
     /* ************************************************************************************ */
-    this.put(`${basePathUsersPremium}/:uid`, ['PREMIUM'], usersController.updateUser);
+    this.put(`${basePathUsersPremium}/:uid`, ['PREMIUM'], usersController.updateUserPremium);
   }
 }
 
