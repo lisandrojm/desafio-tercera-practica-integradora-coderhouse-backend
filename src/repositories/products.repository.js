@@ -12,7 +12,6 @@ class ProductsRepository extends BaseRepository {
   async populateOwner(product) {
     try {
       await product.populate('owner');
-      console.log(product);
       return product;
     } catch (error) {
       throw error; // Lanza la excepción para manejarla en el código que llama a esta función
