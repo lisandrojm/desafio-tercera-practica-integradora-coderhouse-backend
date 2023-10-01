@@ -12,7 +12,7 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
   - Se impide reestablecer la contraseña con la misma contraseña del usuario y se le indica que no se puede colocar la misma contraseña.
   - Cuando el link expira se redirige al usuario a una vista que le permite generar nuevamente el correo de restablecimiento, el cual cuenta con una nueva duración de 1 hora.
 
-<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+<small>Directorio/s , ruta/s y método/s de referencia</small>
 
 - `/src/components/users`
 
@@ -52,7 +52,7 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
 - Establecimiento de un nuevo rol para el schema del usuario llamado “premium”, el cual está habilitado también para crear productos.
 
-<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+<small>Directorio/s de referencia</small>
 
 - `/src/models/users.js`
 
@@ -63,7 +63,7 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
   - Si un producto se crea sin owner, se coloca por defecto “admin”.
   - El campo "owner" solo guarda el \_id del usuario que lo creó. Sólo puede recibir usuarios "premium".
 
-<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+<small>Directorio/s de referencia</small>
 
 - `/src/models/products.js`
 
@@ -77,7 +77,7 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
     - El "admin" puede borrar cualquier producto, aún si es de un "owner".
 
-<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+<small>Directorio/s , ruta/s y método/s de referencia</small>
 
 - `/src/components/products`
 
@@ -103,7 +103,7 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
     - Modificación de la lógica del carrito para que un usuario "premium" NO pueda agregar a su carrito un producto que le pertenece
 
-<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+<small>Directorio/s , ruta/s y método/s de referencia</small>
 
 - `/src/components/carts`
 
@@ -112,18 +112,32 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
     - Ruta/s:
       - /api/carts/:cid/product/:pid (post)
 
-  - `/src/components/handlebars/handlebarsServices/handlebarsServices.js`
-  - `/src/components/handlebars/handlebarsController/handlebarsController.js`
+  - `/src/components/carts/cartsServices/cartsServices.js`
+  - `/src/components/carts/cartsController/cartsController.js`
 
-    - Métodos:
+    - Método/s:
 
-      - addProduct
-      - updateProduct
-      - deleteProduct
+      - addProductToCart
 
 ### Implementación de la ruta /api/users/premium/:uid
 
 - Esta nueva ruta permite cambiar el rol de un usuario, de “user” a “premium” y viceversa.
+
+<small>Directorio/s , ruta/s y método/s de referencia</small>
+
+- `/src/components/users`
+
+  - `/src/components/users/index.js`
+
+    - Ruta/s:
+      - /api/users/premium/:uid (put)
+
+  - `/src/components/users/usersServices/usersServices.js`
+  - `/src/components/users/usersController/usersController.js`
+
+    - Método/s:
+
+      - updateUserPremium
 
 ---
 
