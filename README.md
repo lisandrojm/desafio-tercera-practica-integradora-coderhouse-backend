@@ -48,8 +48,6 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
       - getResetPassByEmail
       - getResetPassExpiredToken
 
----
-
 ### Role "premium"
 
 - Establecimiento de un nuevo rol para el schema del usuario llamado “premium”, el cual está habilitado también para crear productos.
