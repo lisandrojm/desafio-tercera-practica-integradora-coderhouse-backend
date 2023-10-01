@@ -42,7 +42,7 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
   - `/src/components/handlebars/handlebarsServices/handlebarsServices.js`
   - `/src/components/handlebars/handlebarsController/handlebarsController.js`
 
-    - Métodoes:
+    - Método/s:
 
       - getResetPass
       - getResetPassByEmail
