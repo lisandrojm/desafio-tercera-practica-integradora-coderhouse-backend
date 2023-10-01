@@ -55,6 +55,12 @@ class Server {
   views() {
     const handlebars = expressHandlebars.create({
       defaultLayout: 'main',
+      // Registra el helper "eq"
+      helpers: {
+        eq: function (a, b, options) {
+          return a === b ? 'selected' : '';
+        },
+      },
     });
     this.app.set('views', path.join(__dirname, 'views'));
     this.app.engine('handlebars', handlebars.engine);
