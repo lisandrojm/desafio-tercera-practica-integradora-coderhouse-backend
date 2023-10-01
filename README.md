@@ -18,14 +18,14 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
   - `/src/components/users/index.js`
 
-    - Ver rutas:
+    - Rutas:
       - /api/session/useradmin/resetpass
       - /api/session/useradmin/resetpassbyemail
 
   - `/src/components/users/usersServices/usersServices.js`
   - `/src/components/users/usersController/usersController.js`
 
-    - Ver métodos:
+    - Métodos:
 
       - resetPass
       - resetPassByEmail
@@ -34,7 +34,7 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
   - `/src/components/handlebars/index.js`
 
-    - Ver rutas:
+    - Rutas:
       - /resetpassbyemail
       - /resetpass/:token
       - /resetpassexpiredtoken
@@ -42,7 +42,7 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
   - `/src/components/handlebars/handlebarsServices/handlebarsServices.js`
   - `/src/components/handlebars/handlebarsController/handlebarsController.js`
 
-    - Ver métodos:
+    - Métodos:
 
       - getResetPassByEmail
       - getResetPassExpiredToken
