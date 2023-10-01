@@ -277,6 +277,10 @@ class UsersServices {
   updateUserPremium = async (uid, updateFields, res, req) => {
     try {
       const allowedFields = ['role'];
+      // Verificar si el campo 'role' existe en updateFields y si su valor es 'user' o 'premium'
+      if (updateFields.hasOwnProperty('role') && !['user', 'premium'].includes(updateFields.role)) {
+        return res.sendUserError('Eres un user premium. El campo role solo puedes cambiarlo a user o premium');
+      }
 
       const invalidFields = Object.keys(updateFields).filter((field) => !allowedFields.includes(field));
 
@@ -295,7 +299,7 @@ class UsersServices {
 
       const data = updatedUser;
 
-      return res.sendSuccess({ message: 'Usuario actualizado correctamente', payload: data });
+      return res.sendSuccess({ message: 'Role de user actualizado correctamente', payload: data });
     } catch (error) {
       return res.sendServerError('Error al actualizar el usuario');
     }
