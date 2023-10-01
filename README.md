@@ -12,6 +12,12 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
   - Se impide reestablecer la contraseña con la misma contraseña del usuario y se le indica que no se puede colocar la misma contraseña.
   - Cuando el link expira se redirige al usuario a una vista que le permite generar nuevamente el correo de restablecimiento, el cual cuenta con una nueva duración de 1 hora.
 
+<small>Directorios de referencia</small>
+
+- `/src/components/logger/index.js`: Ruta /loggertest.
+- `/src/components/logger/loggerController/loggerController.js`:Controlador de Logger.
+- `/src/components/logger/loggerServices/loggerServices.js`: Servicios de Logger.
+
 ### Role "premium"
 
 - Establecimiento de un nuevo rol para el schema del usuario llamado “premium”, el cual está habilitado también para crear productos.
@@ -46,16 +52,6 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 ---
 
 ---
-
-### Endpoint /loggertest
-
-<small>Directorios de referencia del endpoint /loggertest</small>
-
-- `/src/components/logger/index.js`: Ruta /loggertest.
-- `/src/components/logger/loggerController/loggerController.js`:Controlador de Logger.
-- `/src/components/logger/loggerServices/loggerServices.js`: Servicios de Logger.
-
-## Video testing
 
 ## Requisitos
 
@@ -124,20 +120,6 @@ node index.js -m development -p MONGO
 
 ```bash
 node index.js -m production -p MONGO
-```
-
-## Credenciales de Admin:
-
-### Email:
-
-```
-adminCoder@coder.com
-```
-
-### Password:
-
-```
-adminCod3r123
 ```
 
 ## Credenciales de Admin:
