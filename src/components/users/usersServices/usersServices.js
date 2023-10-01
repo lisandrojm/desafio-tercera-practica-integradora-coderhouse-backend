@@ -194,8 +194,8 @@ class UsersServices {
       const passwordMatch = bcrypt.compareSync(password, user.password);
 
       if (passwordMatch) {
-        req.logger.info('La nueva contraseña es la misma que la contraseña actual');
-        return res.sendUserError('La nueva contraseña es la misma que la contraseña actual');
+        req.logger.info('La nueva contraseña es la misma que la contraseña actual.');
+        return res.sendUserError('La nueva contraseña es la misma que la contraseña actual. No se puede colacar la misma contraseña.');
       }
 
       // Actualizar la contraseña solo si es diferente

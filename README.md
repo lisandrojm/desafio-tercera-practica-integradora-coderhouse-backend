@@ -12,11 +12,40 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
   - Se impide reestablecer la contraseña con la misma contraseña del usuario y se le indica que no se puede colocar la misma contraseña.
   - Cuando el link expira se redirige al usuario a una vista que le permite generar nuevamente el correo de restablecimiento, el cual cuenta con una nueva duración de 1 hora.
 
-<small>Directorios de referencia</small>
+<small>Directorios de referencia - Rutas y métodos relevantes</small>
 
-- `/src/components/logger/index.js`: Ruta /loggertest.
-- `/src/components/logger/loggerController/loggerController.js`:Controlador de Logger.
-- `/src/components/logger/loggerServices/loggerServices.js`: Servicios de Logger.
+- `/src/components/users`
+
+  - `/src/components/users/index.js`
+
+    - Ver rutas:
+      - /api/session/useradmin/resetpass
+      - /api/session/useradmin/resetpassbyemail
+
+  - `/src/components/users/usersServices/usersServices.js`
+  - `/src/components/users/usersController/usersController.js`
+
+    - Ver métodos:
+
+      - resetPass
+      - resetPassByEmail
+
+- `/src/components/handlebars`
+
+  - `/src/components/handlebars/index.js`
+
+    - Ver rutas:
+      - /resetpassbyemail
+      - /resetpass/:token
+      - /resetpassexpiredtoken
+
+  - `/src/components/handlebars/handlebarsServices/handlebarsServices.js`
+  - `/src/components/handlebars/handlebarsController/handlebarsController.js`
+
+    - Ver métodos:
+
+      - getResetPassByEmail
+      - getResetPassExpiredToken
 
 ### Role "premium"
 
