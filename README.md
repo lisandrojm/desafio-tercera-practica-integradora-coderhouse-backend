@@ -12,20 +12,20 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
   - Se impide reestablecer la contraseña con la misma contraseña del usuario y se le indica que no se puede colocar la misma contraseña.
   - Cuando el link expira se redirige al usuario a una vista que le permite generar nuevamente el correo de restablecimiento, el cual cuenta con una nueva duración de 1 hora.
 
-<small>Directorios de referencia - Rutas y métodos relevantes</small>
+<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
 
 - `/src/components/users`
 
   - `/src/components/users/index.js`
 
-    - Rutas:
-      - /api/session/useradmin/resetpass
-      - /api/session/useradmin/resetpassbyemail
+    - Ruta/s:
+      - /api/session/useradmin/resetpass (post)
+      - /api/session/useradmin/resetpassbyemail (get)
 
   - `/src/components/users/usersServices/usersServices.js`
   - `/src/components/users/usersController/usersController.js`
 
-    - Métodos:
+    - Método/s:
 
       - resetPass
       - resetPassByEmail
@@ -34,16 +34,17 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
   - `/src/components/handlebars/index.js`
 
-    - Rutas:
-      - /resetpassbyemail
-      - /resetpass/:token
-      - /resetpassexpiredtoken
+    - Ruta/s:
+      - /resetpass/:token (get)
+      - /resetpassbyemail (get)
+      - /resetpassexpiredtoken (get)
 
   - `/src/components/handlebars/handlebarsServices/handlebarsServices.js`
   - `/src/components/handlebars/handlebarsController/handlebarsController.js`
 
-    - Métodos:
+    - Métodos/:
 
+      - getResetPass
       - getResetPassByEmail
       - getResetPassExpiredToken
 
@@ -51,12 +52,20 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
 - Establecimiento de un nuevo rol para el schema del usuario llamado “premium”, el cual está habilitado también para crear productos.
 
+<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+
+- `/src/models/users.js`
+
 ### Schema de producto - Campo "owner"
 
 - Modificación del schema de producto con un campo “owner”, el cual hace referencia a la persona que creó el producto.
 
   - Si un producto se crea sin owner, se coloca por defecto “admin”.
   - El campo "owner" solo guarda el \_id del usuario que lo creó. Sólo puede recibir usuarios "premium".
+
+<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+
+- `/src/models/products.js`
 
 ### Asignación de permisos para el role "premium"
 
@@ -68,11 +77,49 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
     - El "admin" puede borrar cualquier producto, aún si es de un "owner".
 
+<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+
+- `/src/components/products`
+
+  - `/src/components/products/index.js`
+
+    - Ruta/s:
+      - /api/products/ (post)
+      - /api/products/:pid (put)
+      - /api/products/:pid (delete)
+
+  - `/src/components/handlebars/handlebarsServices/handlebarsServices.js`
+  - `/src/components/handlebars/handlebarsController/handlebarsController.js`
+
+    - Método/s:
+
+      - addProduct
+      - updateProduct
+      - deleteProduct
+
 - Carrito
 
   - Agregar productos al carrito.
 
     - Modificación de la lógica del carrito para que un usuario "premium" NO pueda agregar a su carrito un producto que le pertenece
+
+<small>Directorio/s de referencia - Ruta/s y método/s relevantes</small>
+
+- `/src/components/carts`
+
+  - `/src/components/carts/index.js`
+
+    - Ruta/s:
+      - /api/carts/:cid/product/:pid (post)
+
+  - `/src/components/handlebars/handlebarsServices/handlebarsServices.js`
+  - `/src/components/handlebars/handlebarsController/handlebarsController.js`
+
+    - Métodos:
+
+      - addProduct
+      - updateProduct
+      - deleteProduct
 
 ### Implementación de la ruta /api/users/premium/:uid
 
