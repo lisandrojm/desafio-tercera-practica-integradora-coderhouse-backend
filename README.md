@@ -25,19 +25,23 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
 ### Asignación de permisos para el role "premium"
 
-- Productos | Modificación y eliminación de productos:
+- Productos
 
-  - Un usuario "premium" sólo pueda borrar los productos que le pertenecen.
-  - El "admin" pueda borrar cualquier producto, aún si es de un "owner".
+  - Modificación y eliminación de productos.
 
-- Carrito | Agregar productos al carrito:
+    - Un usuario "premium" sólo pueda borrar los productos que le pertenecen.
 
-  - Modificación de la lógica del carrito para que un usuario "premium" NO pueda agregar a su carrito un producto que le pertenece
+    - El "admin" puede borrar cualquier producto, aún si es de un "owner".
+
+- Carrito
+
+  - Agregar productos al carrito.
+
+    - Modificación de la lógica del carrito para que un usuario "premium" NO pueda agregar a su carrito un producto que le pertenece
 
 ### Implementación de la ruta /api/users/premium/:uid
 
 - Esta nueva ruta permite cambiar el rol de un usuario, de “user” a “premium” y viceversa.
-  .
 
 ---
 
