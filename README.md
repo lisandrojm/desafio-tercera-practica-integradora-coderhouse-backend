@@ -2,15 +2,15 @@
 
 Este repositorio contiene el desafío "Tercera práctica integradora" con las siguientes características:
 
-## Objetivos
+# Objetivos
 
-### Reestablecimiento de contraseña
+## Reestablecimiento de contraseña
 
-- Realización de un sistema de reestablecimiento de contraseña, el cual envía por medio de un correo un link que redirecciona a una página para restablecer la contraseña.
+Realización de un sistema de reestablecimiento de contraseña, el cual envía por medio de un correo un link que redirecciona a una página para restablecer la contraseña.
 
-  - El link del correo expira después de 1 hora de enviado.
-  - Se impide reestablecer la contraseña con la misma contraseña del usuario y se le indica que no se puede colocar la misma contraseña.
-  - Cuando el link expira se redirige al usuario a una vista que le permite generar nuevamente el correo de restablecimiento, el cual cuenta con una nueva duración de 1 hora.
+- El link del correo expira después de 1 hora de enviado.
+- Se impide reestablecer la contraseña con la misma contraseña del usuario y se le indica que no se puede colocar la misma contraseña.
+- Cuando el link expira se redirige al usuario a una vista que le permite generar nuevamente el correo de restablecimiento, el cual cuenta con una nueva duración de 1 hora.
 
 <small>Directorio/s , ruta/s y método/s de referencia</small>
 
@@ -48,34 +48,34 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
       - getResetPassByEmail
       - getResetPassExpiredToken
 
-### Role "premium"
+## Role "premium"
 
-- Establecimiento de un nuevo rol para el schema del usuario llamado “premium”, el cual está habilitado también para crear productos.
+Establecimiento de un nuevo rol para el schema del usuario llamado “premium”, el cual está habilitado también para crear productos.
 
 <small>Directorio/s de referencia</small>
 
 - `/src/models/users.js`
 
-### Schema de producto - Campo "owner"
+## Schema de producto - Campo "owner"
 
-- Modificación del schema de producto con un campo “owner”, el cual hace referencia a la persona que creó el producto.
+Modificación del schema de producto con un campo “owner”, el cual hace referencia a la persona que creó el producto.
 
-  - Si un producto se crea sin owner, se coloca por defecto “admin”.
-  - El campo "owner" solo guarda el \_id del usuario que lo creó. Sólo puede recibir usuarios "premium".
+- Si un producto se crea sin owner, se coloca por defecto “admin”.
+- El campo "owner" solo guarda el \_id del usuario que lo creó. Sólo puede recibir usuarios "premium".
 
 <small>Directorio/s de referencia</small>
 
 - `/src/models/products.js`
 
-### Asignación de permisos para el role "premium"
+## Asignación de permisos para el role "premium"
 
-- Productos
+### Productos
 
-  - Modificación y eliminación de productos.
+Modificación y eliminación de productos.
 
-    - Un usuario "premium" sólo pueda borrar los productos que le pertenecen.
+- Un usuario "premium" sólo pueda borrar los productos que le pertenecen.
 
-    - El "admin" puede borrar cualquier producto, aún si es de un "owner".
+- El "admin" puede borrar cualquier producto, aún si es de un "owner".
 
 <small>Directorio/s , ruta/s y método/s de referencia</small>
 
@@ -97,11 +97,11 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
       - updateProduct
       - deleteProduct
 
-- Carrito
+### Carrito
 
-  - Agregar productos al carrito.
+Agregar productos al carrito.
 
-    - Modificación de la lógica del carrito para que un usuario "premium" NO pueda agregar a su carrito un producto que le pertenece
+- Modificación de la lógica del carrito para que un usuario "premium" NO pueda agregar a su carrito un producto que le pertenece
 
 <small>Directorio/s , ruta/s y método/s de referencia</small>
 
@@ -119,9 +119,9 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
 
       - addProductToCart
 
-### Implementación de la ruta /api/users/premium/:uid
+## Implementación de la ruta /api/users/premium/:uid
 
-- Esta nueva ruta permite cambiar el rol de un usuario, de “user” a “premium” y viceversa.
+Esta nueva ruta permite cambiar el rol de un usuario, de “user” a “premium” y viceversa.
 
 <small>Directorio/s , ruta/s y método/s de referencia</small>
 
@@ -138,8 +138,6 @@ Este repositorio contiene el desafío "Tercera práctica integradora" con las si
     - Método/s:
 
       - updateUserPremium
-
----
 
 ---
 
@@ -197,20 +195,6 @@ Sigue estos pasos para instalar y configurar el proyecto:
    Asegúrate de reemplazar `<PUERTO_DE_LA_APP>` con el número de puerto especificado en el archivo `.env`.
 
 7. Ahora podrás utilizar la vista de Login en la aplicación.
-
-## Comandos para testing de las diferentes variables de entorno :
-
-### Desarrollo
-
-```bash
-node index.js -m development -p MONGO
-```
-
-### Producción
-
-```bash
-node index.js -m production -p MONGO
-```
 
 ## Credenciales de Admin:
 
