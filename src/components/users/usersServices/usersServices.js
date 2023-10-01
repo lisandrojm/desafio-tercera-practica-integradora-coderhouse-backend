@@ -216,7 +216,7 @@ class UsersServices {
       // Buscar al usuario por correo electrónico
       const user = await usersServices.findOne({ email });
 
-      req.logger.debug('resetPassByEmail', user);
+      /*       req.logger.debug('resetPassByEmail', user); */
 
       if (!user) {
         return res.sendNotFound('Usuario no encontrado');
