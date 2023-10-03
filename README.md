@@ -144,7 +144,12 @@ Esta nueva ruta permite cambiar el rol de un usuario, de “user” a “premium
 
       - updateUserPremium
 
-### Video Role "premium" + Schema de producto - Campo "owner" + Asignación de permisos para el role "premium" + Implementación de la ruta /api/users/premium/:uid
+### Video:
+
+- Role "premium"
+- Schema de producto - Campo "owner"
+- Asignación de permisos para el role "premium"
+- Implementación de la ruta /api/users/premium/:uid
 
 ---
 
