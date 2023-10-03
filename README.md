@@ -47,10 +47,8 @@ Realización de un sistema de reestablecimiento de contraseña, el cual envía p
       - getResetPass
       - getResetPassByEmail
       - getResetPassExpiredToken
-      -
 
 ### Video "Reestablecimiento de contraseña"
-
 https://github.com/lisandrojm/desafio_tercera_practica_integradora/assets/35199683/c6584ce6-5566-49b7-b84a-05a87a5e3fac
 
 ## Role "premium"
@@ -60,6 +58,10 @@ Establecimiento de un nuevo rol para el schema del usuario llamado “premium”
 <small>Directorio/s de referencia</small>
 
 - `/src/models/users.js`
+  
+### Video "Role premium"
+https://github.com/lisandrojm/desafio_tercera_practica_integradora/assets/35199683/bf7855d9-cdcd-4633-9f88-8a58929f9032
+
 
 ## Schema de producto - Campo "owner"
 
@@ -71,6 +73,10 @@ Modificación del schema de producto con un campo “owner”, el cual hace refe
 <small>Directorio/s de referencia</small>
 
 - `/src/models/products.js`
+  
+### Video "Schema de producto - Campo owner"
+https://github.com/lisandrojm/desafio_tercera_practica_integradora/assets/35199683/caf590cd-0e84-4099-ae1b-deab6418a2e9
+
 
 ## Asignación de permisos para el role "premium"
 
@@ -123,6 +129,9 @@ Agregar productos al carrito.
     - Método/s:
 
       - addProductToCart
+        
+### Video "Asignación de permisos para el role premium"
+https://github.com/lisandrojm/desafio_tercera_practica_integradora/assets/35199683/2b4dcd49-f0dd-49d5-90e0-5335371652e0
 
 ## Implementación de la ruta /api/users/premium/:uid
 
@@ -144,12 +153,9 @@ Esta nueva ruta permite cambiar el rol de un usuario, de “user” a “premium
 
       - updateUserPremium
 
-### Video:
+### Video " Implementación de la ruta /api/users/premium/:uid"
+https://github.com/lisandrojm/desafio_tercera_practica_integradora/assets/35199683/1bdc22cb-8a98-48bc-9899-77c0d64dab09
 
-- Role "premium"
-- Schema de producto - Campo "owner"
-- Asignación de permisos para el role "premium"
-- Implementación de la ruta /api/users/premium/:uid
 
 ---
 
