@@ -47,8 +47,10 @@ Realización de un sistema de reestablecimiento de contraseña, el cual envía p
       - getResetPass
       - getResetPassByEmail
       - getResetPassExpiredToken
-      - 
+      -
+
 ### Video "Reestablecimiento de contraseña"
+
 https://github.com/lisandrojm/desafio_tercera_practica_integradora/assets/35199683/c6584ce6-5566-49b7-b84a-05a87a5e3fac
 
 ## Role "premium"
@@ -141,6 +143,8 @@ Esta nueva ruta permite cambiar el rol de un usuario, de “user” a “premium
     - Método/s:
 
       - updateUserPremium
+
+### Video Role "premium" + Schema de producto - Campo "owner" + Asignación de permisos para el role "premium" + Implementación de la ruta /api/users/premium/:uid
 
 ---
 
