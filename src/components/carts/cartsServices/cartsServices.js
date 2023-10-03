@@ -84,39 +84,6 @@ class CartsServices {
     }
   };
 
-  /*   addProductToCart = async (cid, pid, quantity, res) => {
-    try {
-      const cart = await cartsServices.findById(cid);
-      if (!cart) {
-        return res.sendNotFound('Carrito no encontrado');
-      }
-
-      const product = await productsServices.findById(pid);
-      if (!product) {
-        return res.sendNotFound('ID de Producto no encontrado');
-      }
-
-      const productIndex = cart.products.findIndex((p) => p.productId.toString() === pid);
-      if (productIndex === -1) {
-        const newProduct = {
-          productId: pid,
-          quantity: quantity || 1,
-        };
-        cart.products.push(newProduct);
-      } else {
-        cart.products[productIndex].quantity += quantity || 1;
-      }
-      await cartsServices.save(cart);
-      const data = cart;
-      return res.sendSuccess({
-        message: 'Producto agregado al carrito correctamente',
-        payload: data,
-      });
-    } catch (error) {
-      return res.sendServerError('Error al agregar el producto al carrito');
-    }
-  }; */
-
   addProductToCart = async (cid, pid, quantity, res, req) => {
     try {
       const cart = await cartsServices.findById(cid);
